@@ -1,0 +1,22 @@
+Kun painetaan "save", niin tapahtuu seuraavasti.
+
+Ensin selain lähettää palvelimelle HTTP POST -pyynnön, koodilla 302.
+
+Koodin 302 tarkoitus on ohjata selaimen tekemään uudelleen pyynnön 
+toiseen sivustoon.
+
+Koodilla 302 selain tekee HTTP GET -pyynnön osoitteeseen /notes
+
+Selain sitten lataa sivun /notes
+
+Tämän sivunlataus saa aikaan kolmea HTTP GET -pyyntöä, jolla ladataan
+tyylitiedostoa (main.css), javascript-koodin (main.js) ja raakadatan
+(data.json)
+
+attribuuttien "action" ja "method" ansiosta lomake menee "HTTP POST
+-pyyntönä" osoitteseen "/new_note"
+
+Palvelin lukee sitä viestiä, eli dataa, katsomalla POST -pyynnön 
+mukana tulleen koodia.
+
+Tämän jälkeen palvelin tekee uutta viestiä vastaavan muistiinpanon
